@@ -2,36 +2,46 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: var(--sds-typography-body-font-family);
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  font-family: var(--sds-typography-body-font-family);
+  line-height: var(--sds-typography-body-line-height-medium);
+  color: var(--sds-color-text-default-default);
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #f5f5f5;
+  padding: var(--sds-spacing-500);
+  background-color: var(--sds-color-background-default-secondary);
 }
 
 header {
   text-align: center;
-  padding: 20px 0;
-  margin-bottom: 30px;
-  background-color: #1a237e;
-  color: white;
-  border-radius: 5px;
+  padding: var(--sds-spacing-500) 0;
+  margin-bottom: var(--sds-spacing-800);
+  background-color: var(--sds-color-background-brand-default);
+  color: var(--sds-color-text-default-inverse);
+  border-radius: var(--sds-border-radius-medium);
 }
 
 header h1 {
-  margin-bottom: 10px;
+  margin-bottom: var(--sds-spacing-200);
+  font-size: var(--sds-typography-heading-size-xlarge);
+  font-weight: var(--sds-typography-heading-font-weight-bold);
+  line-height: var(--sds-typography-heading-line-height-xlarge);
+}
+
+header h2 {
+  font-size: var(--sds-typography-heading-size-small);
+  font-weight: var(--sds-typography-heading-font-weight-medium);
+  color: var(--sds-color-text-default-inverse);
+  opacity: 0.8;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: var(--sds-spacing-800);
   justify-content: center;
 }
 
@@ -42,58 +52,65 @@ main {
 }
 
 section {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--sds-color-background-default-default);
+  padding: var(--sds-spacing-500);
+  border-radius: var(--sds-border-radius-medium);
+  box-shadow: var(--sds-shadow-medium);
   width: 100%;
   max-width: 500px;
 }
 
 section h3 {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  color: #1a237e;
+  margin-bottom: var(--sds-spacing-500);
+  padding-bottom: var(--sds-spacing-300);
+  border-bottom: var(--sds-border-width-small) solid var(--sds-color-border-default-default);
+  color: var(--sds-color-text-brand-default);
+  font-size: var(--sds-typography-heading-size-medium);
+  font-weight: var(--sds-typography-heading-font-weight-semibold);
 }
 
 .activity-card {
-  margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  margin-bottom: var(--sds-spacing-400);
+  padding: var(--sds-spacing-400);
+  border: var(--sds-border-width-small) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-border-radius-medium);
+  background-color: var(--sds-color-background-default-secondary);
 }
 
 .activity-card h4 {
-  margin-bottom: 10px;
-  color: #0066cc;
+  margin-bottom: var(--sds-spacing-300);
+  color: var(--sds-color-text-brand-default);
+  font-size: var(--sds-typography-body-size-large);
+  font-weight: var(--sds-typography-body-font-weight-semibold);
 }
 
 .activity-card p {
-  margin-bottom: 8px;
+  margin-bottom: var(--sds-spacing-200);
+  font-size: var(--sds-typography-body-size-small);
+  color: var(--sds-color-text-default-secondary);
 }
 
 /* New styles for participants section */
 .participants-container {
-  margin-top: 15px;
-  padding-top: 12px;
-  border-top: 1px dashed #ccc;
+  margin-top: var(--sds-spacing-400);
+  padding-top: var(--sds-spacing-300);
+  border-top: var(--sds-border-width-small) dashed var(--sds-color-border-default-default);
 }
 
 .participants-section h5 {
-  margin-bottom: 8px;
-  color: #1a237e;
-  font-size: 16px;
+  margin-bottom: var(--sds-spacing-200);
+  color: var(--sds-color-text-brand-default);
+  font-size: var(--sds-typography-body-size-medium);
+  font-weight: var(--sds-typography-body-font-weight-semibold);
 }
 
 .participants-section ul {
   list-style-type: none;
-  padding-left: 5px;
+  padding-left: var(--sds-spacing-100);
 }
 
 .participants-section ul li {
-  padding: 4px 0;
+  padding: var(--sds-spacing-100) 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -107,85 +124,103 @@ section h3 {
 
 .participant-email {
   flex-grow: 1;
-  margin-right: 8px;
+  margin-right: var(--sds-spacing-200);
+  font-size: var(--sds-typography-body-size-small);
+  color: var(--sds-color-text-default-default);
 }
 
 .delete-btn {
   background: none;
   border: none;
-  color: #c62828;
+  color: var(--sds-color-icon-danger-default);
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
+  font-size: var(--sds-typography-body-size-small);
+  padding: var(--sds-spacing-100) var(--sds-spacing-200);
   transition: all 0.2s;
-  border-radius: 3px;
+  border-radius: var(--sds-border-radius-small);
 }
 
 .delete-btn:hover {
-  background-color: #ffebee;
+  background-color: var(--sds-color-background-danger-secondary);
 }
 
 .participants-section p {
-  color: #777;
+  color: var(--sds-color-text-default-tertiary);
   font-style: italic;
+  font-size: var(--sds-typography-body-size-small);
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: var(--sds-spacing-400);
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: var(--sds-spacing-200);
+  font-weight: var(--sds-typography-body-font-weight-semibold);
+  font-size: var(--sds-typography-body-size-small);
+  color: var(--sds-color-text-default-default);
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
+  padding: var(--sds-spacing-300) var(--sds-spacing-400);
+  border: var(--sds-border-width-small) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-border-radius-small);
+  font-size: var(--sds-typography-body-size-medium);
+  font-family: var(--sds-typography-body-font-family);
+  color: var(--sds-color-text-default-default);
+  background-color: var(--sds-color-background-default-default);
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--sds-color-border-brand-default);
 }
 
 button {
-  background-color: #1a237e;
-  color: white;
+  background-color: var(--sds-color-background-brand-default);
+  color: var(--sds-color-text-brand-on-brand);
   border: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 5px;
+  padding: var(--sds-spacing-300) var(--sds-spacing-500);
+  font-size: var(--sds-typography-body-size-medium);
+  font-family: var(--sds-typography-body-font-family);
+  font-weight: var(--sds-typography-body-font-weight-medium);
+  border-radius: var(--sds-border-radius-small);
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #3949ab;
+  background-color: var(--sds-color-background-brand-secondary);
 }
 
 .message {
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 4px;
+  margin-top: var(--sds-spacing-500);
+  padding: var(--sds-spacing-300) var(--sds-spacing-400);
+  border-radius: var(--sds-border-radius-small);
+  font-size: var(--sds-typography-body-size-small);
 }
 
 .success {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #a5d6a7;
+  background-color: var(--sds-color-background-positive-secondary);
+  color: var(--sds-color-text-positive-default);
+  border: var(--sds-border-width-small) solid var(--sds-color-border-positive-default);
 }
 
 .error {
-  background-color: #ffebee;
-  color: #c62828;
-  border: 1px solid #ef9a9a;
+  background-color: var(--sds-color-background-danger-secondary);
+  color: var(--sds-color-text-danger-default);
+  border: var(--sds-border-width-small) solid var(--sds-color-border-danger-default);
 }
 
 .info {
-  background-color: #d1ecf1;
-  color: #0c5460;
-  border: 1px solid #bee5eb;
+  background-color: var(--sds-color-background-default-tertiary);
+  color: var(--sds-color-text-default-secondary);
+  border: var(--sds-border-width-small) solid var(--sds-color-border-default-default);
 }
 
 .hidden {
@@ -194,7 +229,8 @@ button:hover {
 
 footer {
   text-align: center;
-  margin-top: 30px;
-  padding: 20px;
-  color: #666;
+  margin-top: var(--sds-spacing-800);
+  padding: var(--sds-spacing-500);
+  color: var(--sds-color-text-default-secondary);
+  font-size: var(--sds-typography-body-size-small);
 }
